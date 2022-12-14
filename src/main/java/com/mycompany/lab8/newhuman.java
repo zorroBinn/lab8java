@@ -10,11 +10,13 @@ package com.mycompany.lab8;
  */
 public class newhuman extends javax.swing.JFrame {
 
+    buff bf;
     /**
      * Creates new form newhuman
      */
     public newhuman() {
         initComponents();
+        bf = new buff();
     }
 
     /**
@@ -26,21 +28,142 @@ public class newhuman extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        name = new javax.swing.JTextField();
+        age = new javax.swing.JComboBox<>();
+        weight = new javax.swing.JComboBox<>();
+        height = new javax.swing.JComboBox<>();
+        male = new javax.swing.JRadioButton();
+        famale = new javax.swing.JRadioButton();
+        create = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(659, 510));
+        setMinimumSize(new java.awt.Dimension(659, 510));
+        setPreferredSize(new java.awt.Dimension(659, 510));
+        setResizable(false);
+
+        jLabel3.setText("Возраст");
+
+        jLabel6.setText("Пол");
+
+        jLabel9.setText("Вес");
+
+        jLabel10.setText("Рост");
+
+        jLabel1.setText("Имя");
+
+        age.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40" }));
+
+        weight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "60", "65", "70", "75", "80", "85", "90", "95", "100" }));
+
+        height.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "150", "155", "160", "165", "170", "175", "180", "185", "190", "195", "200" }));
+
+        buttonGroup1.add(male);
+        male.setText("М");
+
+        buttonGroup1.add(famale);
+        famale.setText("Ж");
+
+        create.setText("Создать");
+        create.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                            .addComponent(age, 0, 1, Short.MAX_VALUE))
+                        .addGap(171, 171, 171)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(27, 27, 27)
+                                .addComponent(weight, 0, 71, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(22, 22, 22)
+                                .addComponent(height, 0, 1, Short.MAX_VALUE)))
+                        .addGap(187, 187, 187))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(male)
+                            .addComponent(famale))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(269, 269, 269)
+                .addComponent(create)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(weight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(height, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(male)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(famale)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addComponent(create)
+                .addGap(102, 102, 102))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
+        if(!this.name.getText().trim().isEmpty()){
+            if(this.male.isSelected() == true || this.famale.isSelected() == true) {
+                buff.BuffName = this.name.getText();
+                buff.BufAge = (String)this.age.getSelectedItem();
+                if(this.male.isSelected() == true) {
+                    buff.BuffSex = this.male.getText();
+                }
+                else {
+                    buff.BuffSex = this.famale.getText();
+                }
+                buff.BufWeight = (String)this.weight.getSelectedItem();
+                buff.BufHeight = (String)this.height.getSelectedItem();
+                this.dispose();
+            }
+        }
+            
+    }//GEN-LAST:event_createActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +201,18 @@ public class newhuman extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> age;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton create;
+    private javax.swing.JRadioButton famale;
+    private javax.swing.JComboBox<String> height;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JRadioButton male;
+    private javax.swing.JTextField name;
+    private javax.swing.JComboBox<String> weight;
     // End of variables declaration//GEN-END:variables
 }
