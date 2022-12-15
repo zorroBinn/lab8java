@@ -4,8 +4,6 @@
  */
 
 package com.mycompany.lab8;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Иван
@@ -29,6 +27,7 @@ public class MyGame extends javax.swing.JFrame {
         rt = new Realty();
         md = new Medicalcard();
         bf = new buff();
+        this.gamebox.setVisible(false);
         Table.setValueAt("Верх", 0, 0);
         Table.setValueAt("Штаны", 1, 0);
         Table.setValueAt("Обувь", 2, 0);
@@ -44,74 +43,119 @@ public class MyGame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel18 = new javax.swing.JLabel();
-        healthing = new javax.swing.JButton();
-        namework = new javax.swing.JLabel();
-        payment = new javax.swing.JLabel();
-        working = new javax.swing.JButton();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        car = new javax.swing.JLabel();
-        house = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        balance = new javax.swing.JLabel();
+        newhumanbutton = new javax.swing.JButton();
+        gamebox = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        name = new javax.swing.JLabel();
         buy = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        weight = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        payment = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         height = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        imt = new javax.swing.JLabel();
+        healthstatus = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        weight = new javax.swing.JLabel();
+        car = new javax.swing.JLabel();
+        sex = new javax.swing.JLabel();
+        balance = new javax.swing.JLabel();
+        imt1 = new javax.swing.JLabel();
+        working = new javax.swing.JButton();
+        age = new javax.swing.JLabel();
+        namework = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel20 = new javax.swing.JLabel();
+        SewUp = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
-        jLabel11 = new javax.swing.JLabel();
-        SewUp = new javax.swing.JButton();
-        imt = new javax.swing.JLabel();
-        imt1 = new javax.swing.JLabel();
-        healthstatus = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        name = new javax.swing.JLabel();
+        healthing = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        age = new javax.swing.JLabel();
-        sex = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        newhumanbutton = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
+        house = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Game");
+        setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(659, 510));
         setMinimumSize(new java.awt.Dimension(659, 510));
 
-        jLabel18.setText("Оплата");
+        newhumanbutton.setText("Создать персонажа");
+        newhumanbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newhumanbuttonActionPerformed(evt);
+            }
+        });
 
-        healthing.setText("Лечиться(10$)");
+        jLabel17.setText("Работа");
 
-        namework.setText("Работа");
+        name.setText("ИМЯ");
 
-        payment.setText("Оплата");
-
-        working.setText("Работать");
+        buy.setText("Купить");
+        buy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buyActionPerformed(evt);
+            }
+        });
 
         jLabel19.setText("Жильё");
 
-        jLabel20.setText("ТО");
+        jLabel7.setText("Баланс");
 
-        car.setText("ТО");
+        payment.setText("Оплата");
 
-        house.setText("Жильё");
+        jLabel11.setText("ИМТ");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Квартира(3000000)", "Машина(500000)" }));
-
-        balance.setText("БАЛАНС");
-
-        buy.setText("Купить");
-
-        jLabel9.setText("Вес");
-
-        weight.setText("ВЕС");
+        height.setText("Рост");
 
         jLabel10.setText("Рост");
 
-        height.setText("Рост");
+        jLabel1.setText("Имя");
+
+        imt.setText("ИМТ");
+
+        healthstatus.setText("100");
+
+        jLabel18.setText("Оплата");
+
+        weight.setText("ВЕС");
+
+        car.setText("ТО");
+
+        sex.setText("ПОЛ");
+
+        balance.setText("БАЛАНС");
+
+        imt1.setText("Статуст здоровья");
+
+        working.setText("Работать");
+        working.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                workingActionPerformed(evt);
+            }
+        });
+
+        age.setText("ВОЗРАСТ");
+
+        namework.setText("Работа");
+
+        jLabel6.setText("Пол");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Квартира(3000000)", "Машина(500000)" }));
+
+        jLabel20.setText("ТО");
+
+        SewUp.setText("Починка(5$)");
+        SewUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SewUpActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Вес");
 
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -142,126 +186,100 @@ public class MyGame extends javax.swing.JFrame {
         Table.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(Table);
 
-        jLabel11.setText("ИМТ");
-
-        SewUp.setText("Починка(5$)");
-
-        imt.setText("ИМТ");
-
-        imt1.setText("Статуст здоровья");
-
-        healthstatus.setText("100");
-
-        jLabel1.setText("Имя");
-
-        name.setText("ИМЯ");
-
-        jLabel3.setText("Возраст");
-
-        age.setText("ВОЗРАСТ");
-
-        sex.setText("ПОЛ");
-
-        jLabel6.setText("Пол");
-
-        jLabel7.setText("Баланс");
-
-        newhumanbutton.setText("Создать персонажа");
-        newhumanbutton.addActionListener(new java.awt.event.ActionListener() {
+        healthing.setText("Лечиться(10$)");
+        healthing.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newhumanbuttonActionPerformed(evt);
+                healthingActionPerformed(evt);
             }
         });
 
-        jLabel17.setText("Работа");
+        jLabel3.setText("Возраст");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        house.setText("Жильё");
+
+        javax.swing.GroupLayout gameboxLayout = new javax.swing.GroupLayout(gamebox);
+        gamebox.setLayout(gameboxLayout);
+        gameboxLayout.setHorizontalGroup(
+            gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gameboxLayout.createSequentialGroup()
+                .addGap(426, 426, 426)
+                .addComponent(SewUp)
+                .addGap(68, 68, 68))
+            .addGroup(gameboxLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(gameboxLayout.createSequentialGroup()
+                        .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel3)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
                             .addComponent(jLabel9))
                         .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(name)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(gameboxLayout.createSequentialGroup()
+                                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(weight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(sex, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(balance, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(gameboxLayout.createSequentialGroup()
                                         .addGap(54, 54, 54)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jLabel18)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(payment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                    .addComponent(working)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jLabel17)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(namework, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(40, 40, 40)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jLabel20)
-                                                        .addGap(42, 42, 42)
-                                                        .addComponent(car, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jLabel19)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(house, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                            .addComponent(newhumanbutton)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(gameboxLayout.createSequentialGroup()
+                                                .addComponent(jLabel18)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(payment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addComponent(working)
+                                            .addGroup(gameboxLayout.createSequentialGroup()
+                                                .addComponent(jLabel17)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(namework, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(40, 40, 40)
+                                        .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(gameboxLayout.createSequentialGroup()
+                                                .addComponent(jLabel20)
+                                                .addGap(42, 42, 42)
+                                                .addComponent(car, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGroup(gameboxLayout.createSequentialGroup()
+                                                .addComponent(jLabel19)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(house, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gameboxLayout.createSequentialGroup()
                                         .addGap(267, 267, 267)
                                         .addComponent(buy)
                                         .addGap(41, 41, 41)))))
-                        .addContainerGap(81, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(44, 44, 44))
+                    .addGroup(gameboxLayout.createSequentialGroup()
+                        .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(healthing)
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(gameboxLayout.createSequentialGroup()
                                 .addComponent(imt1)
                                 .addGap(18, 18, 18)
-                                .addComponent(healthstatus, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(healthstatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(gameboxLayout.createSequentialGroup()
+                                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel11))
                                 .addGap(25, 25, 25)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(height, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(imt, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SewUp)
-                .addGap(126, 126, 126))
+                                    .addComponent(imt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        gameboxLayout.setVerticalGroup(
+            gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(gameboxLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(name))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(age)
                     .addComponent(jLabel17)
@@ -269,7 +287,7 @@ public class MyGame extends javax.swing.JFrame {
                     .addComponent(jLabel19)
                     .addComponent(house))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sex)
                     .addComponent(jLabel6)
                     .addComponent(jLabel18)
@@ -277,36 +295,57 @@ public class MyGame extends javax.swing.JFrame {
                     .addComponent(jLabel20)
                     .addComponent(car))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(balance)
                     .addComponent(working)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(weight)
                     .addComponent(buy))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gameboxLayout.createSequentialGroup()
+                        .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(height))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(imt))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(imt1)
-                            .addComponent(healthstatus))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(healthing))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(healthstatus)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(healthing)
+                .addGap(18, 18, 18)
                 .addComponent(SewUp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(252, 252, 252)
+                .addComponent(newhumanbutton)
+                .addContainerGap(267, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(gamebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(gamebox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(67, 67, 67)
                 .addComponent(newhumanbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -316,16 +355,24 @@ public class MyGame extends javax.swing.JFrame {
 
     private void newhumanbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newhumanbuttonActionPerformed
         if(this.newhumanbutton.getText().equals("Загрузить")) {
-            this.age.setText(buff.BufAge);
+            this.gamebox.setVisible(true);
+            this.newhumanbutton.setVisible(false);
+            pers.SetAge(Integer.parseInt(buff.BufAge));
+            pers.SetName(buff.BuffName);
+            pers.SetSex(buff.BuffSex);
+            md.SetHeight(Integer.parseInt(buff.BufHeight));
+            md.SetWeight(Integer.parseInt(buff.BufWeight));
+            this.age.setText(String.valueOf(pers.GetAge()));
             this.balance.setText(String.valueOf(pers.GetMoney()));
-            this.sex.setText(buff.BuffSex);
-            this.name.setText(buff.BuffName);
-            this.height.setText(buff.BufHeight);
-            this.weight.setText(buff.BufWeight);
+            this.sex.setText(pers.GetSex());
+            this.name.setText(pers.GetName());
+            this.height.setText(String.valueOf(md.GetHeight()));
+            this.weight.setText(String.valueOf(md.GetWeight()));
             this.namework.setText(wk.GetNamework());
             this.payment.setText(String.valueOf(wk.GetPayment()));
             this.house.setText(rt.GetHousing());
             this.car.setText(rt.GetVehicle());
+            this.healthstatus.setText(String.valueOf(md.GetHealthStatus()));
             Table.setValueAt(cl.GetBody(), 0, 1);
             Table.setValueAt(cl.GetPants(), 1, 1);
             Table.setValueAt(cl.GetShoes(), 2, 1);
@@ -338,6 +385,50 @@ public class MyGame extends javax.swing.JFrame {
             this.newhumanbutton.setText("Загрузить");
         }
     }//GEN-LAST:event_newhumanbuttonActionPerformed
+
+    private void healthingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_healthingActionPerformed
+        if(pers.GetMoney() >= 10 && md.GetHealthStatus() < 100) {
+            md.UpStatus();
+            pers.ChangeMoney(-10);
+            this.balance.setText(String.valueOf(pers.GetMoney()));
+            this.healthstatus.setText(String.valueOf(md.GetHealthStatus()));
+        }
+    }//GEN-LAST:event_healthingActionPerformed
+
+    private void SewUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SewUpActionPerformed
+        if(pers.GetMoney() >= 5 && cl.GetClothesStatus() < 100) {
+            pers.ChangeMoney(-5);
+            cl.SewUpClothes();
+            Table.setValueAt(cl.GetClothesStatus(), 3, 1);
+            this.balance.setText(String.valueOf(pers.GetMoney()));
+        }
+    }//GEN-LAST:event_SewUpActionPerformed
+
+    private void workingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_workingActionPerformed
+        if(cl.GetClothesStatus() > 0 && md.GetHealthStatus() > 0) {
+            pers.ChangeMoney(wk.GetPayment());
+            md.DownStatus();
+            cl.TearClothes();
+            Table.setValueAt(cl.GetClothesStatus(), 3, 1);
+            this.balance.setText(String.valueOf(pers.GetMoney()));
+            this.healthstatus.setText(String.valueOf(md.GetHealthStatus()));
+        }
+    }//GEN-LAST:event_workingActionPerformed
+
+    private void buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyActionPerformed
+        if (this.jComboBox1.getSelectedItem().equals("Квартира(3000000)") && pers.GetMoney()>3000000) {
+            pers.ChangeMoney(-3000000);
+            rt.SetHousing("Квартира");
+            this.balance.setText(String.valueOf(pers.GetMoney()));
+            this.house.setText(rt.GetHousing());
+        }
+        if (this.jComboBox1.getSelectedItem().equals("Машина(500000)") && pers.GetMoney()>500000) {
+            pers.ChangeMoney(-500000);
+            this.balance.setText(String.valueOf(pers.GetMoney()));
+            rt.SetVehicle("Машина");
+            this.car.setText(rt.GetVehicle());
+        }
+    }//GEN-LAST:event_buyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -381,6 +472,7 @@ public class MyGame extends javax.swing.JFrame {
     private javax.swing.JLabel balance;
     private javax.swing.JButton buy;
     private javax.swing.JLabel car;
+    private javax.swing.JPanel gamebox;
     private javax.swing.JButton healthing;
     private javax.swing.JLabel healthstatus;
     private javax.swing.JLabel height;
