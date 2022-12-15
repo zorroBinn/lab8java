@@ -76,6 +76,7 @@ public class MyGame extends javax.swing.JFrame {
         healthing = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         house = new javax.swing.JLabel();
+        buysuit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Game");
@@ -197,17 +198,20 @@ public class MyGame extends javax.swing.JFrame {
 
         house.setText("Жильё");
 
+        buysuit.setText("Купить костюм(1000$)");
+        buysuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buysuitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout gameboxLayout = new javax.swing.GroupLayout(gamebox);
         gamebox.setLayout(gameboxLayout);
         gameboxLayout.setHorizontalGroup(
             gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gameboxLayout.createSequentialGroup()
-                .addGap(426, 426, 426)
-                .addComponent(SewUp)
-                .addGap(68, 68, 68))
             .addGroup(gameboxLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gameboxLayout.createSequentialGroup()
                         .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -269,7 +273,14 @@ public class MyGame extends javax.swing.JFrame {
                                     .addComponent(height, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(imt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gameboxLayout.createSequentialGroup()
+                                .addComponent(buysuit)
+                                .addGap(39, 39, 39))))))
+            .addGroup(gameboxLayout.createSequentialGroup()
+                .addGap(426, 426, 426)
+                .addComponent(SewUp))
         );
         gameboxLayout.setVerticalGroup(
             gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,7 +332,9 @@ public class MyGame extends javax.swing.JFrame {
                             .addComponent(healthstatus)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(healthing)
+                .addGroup(gameboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(healthing)
+                    .addComponent(buysuit))
                 .addGap(18, 18, 18)
                 .addComponent(SewUp)
                 .addContainerGap())
@@ -373,6 +386,7 @@ public class MyGame extends javax.swing.JFrame {
             this.house.setText(rt.GetHousing());
             this.car.setText(rt.GetVehicle());
             this.healthstatus.setText(String.valueOf(md.GetHealthStatus()));
+            this.imt.setText(md.GetIMT());
             Table.setValueAt(cl.GetBody(), 0, 1);
             Table.setValueAt(cl.GetPants(), 1, 1);
             Table.setValueAt(cl.GetShoes(), 2, 1);
@@ -430,6 +444,19 @@ public class MyGame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_buyActionPerformed
 
+    private void buysuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buysuitActionPerformed
+        if(pers.GetMoney() >= 1000) {
+            cl.BuySuit();
+            pers.ChangeMoney(-1000);
+            this.balance.setText(String.valueOf(pers.GetMoney()));
+            Table.setValueAt(cl.GetBody(), 0, 1);
+            Table.setValueAt(cl.GetPants(), 1, 1);
+            Table.setValueAt(cl.GetShoes(), 2, 1);
+            Table.setValueAt(cl.GetClothesStatus(), 3, 1);
+            this.buysuit.setVisible(false);
+        }
+    }//GEN-LAST:event_buysuitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -471,6 +498,7 @@ public class MyGame extends javax.swing.JFrame {
     private javax.swing.JLabel age;
     private javax.swing.JLabel balance;
     private javax.swing.JButton buy;
+    private javax.swing.JButton buysuit;
     private javax.swing.JLabel car;
     private javax.swing.JPanel gamebox;
     private javax.swing.JButton healthing;
