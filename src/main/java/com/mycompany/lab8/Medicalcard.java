@@ -14,7 +14,8 @@ public class Medicalcard {
     private int HealthStatus;
     
     Medicalcard(){
-        this.Weight = this.Height = this.HealthStatus = 0;
+        this.Weight = this.Height = 0;
+        this.HealthStatus = 100;
     }
     public int GetWeight() {
         return this.Weight;
@@ -45,5 +46,9 @@ public class Medicalcard {
         if (this.HealthStatus > 100) {
             this.HealthStatus = 100;
         }
+    }
+    public String GetIMT() {
+        Double IMT = (this.Weight + 0.0)/(this.Height*this.Height/10000);
+        return (String.valueOf(IMT)).substring(0, 5);
     }
 }

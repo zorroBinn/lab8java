@@ -9,11 +9,11 @@ package com.mycompany.lab8;
  * @author Иван
  */
 public class Human {
-private
-       String Name;
-       String Sex;
-       int Age;
-       long Money;
+
+       private String Name;
+       private String Sex;
+       private int Age;
+       private long Money;
 
 
         Human() {
